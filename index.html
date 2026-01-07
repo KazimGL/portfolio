@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhojani Kazim - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #2c3e50;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #2c3e50;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .header-text {
+            flex: 1;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .contact-header {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .contact-header a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        nav {
+            background: #2c3e50;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        nav a:hover {
+            background: #34495e;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        .about-text {
+            color: #555;
+            text-align: justify;
+        }
+
+        .about-text p {
+            margin-bottom: 12px;
+        }
+
+        .education-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+        }
+
+        .education-item h3 {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .education-item .course {
+            color: #555;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+
+        .education-item .details {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .project {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-left: 4px solid #3498db;
+        }
+
+        .project h3 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .project-info {
+            color: #777;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .technologies {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .technologies strong {
+            color: #2c3e50;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .skill-group {
+            background: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+
+        .skill-group h3 {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .skill-group ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skill-group li {
+            color: #555;
+            padding: 4px 0;
+            font-size: 14px;
+        }
+
+        .skill-group li:before {
+            content: "• ";
+            color: #3498db;
+        }
+
+        .interests-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .interest-item {
+            background: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+
+        .interest-item h3 {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .interest-item p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .contact-info {
+            background: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .resume-section {
+            text-align: center;
+            padding: 30px;
+            background: #f9f9f9;
+            border: 2px dashed #3498db;
+        }
+
+        .resume-section h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .resume-section p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .download-btn:hover {
+            background: #2980b9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 14px;
+            background: white;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-pic {
+                margin-bottom: 15px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .interests-list {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <!-- Replace 'your-photo.jpg' with your actual photo file name -->
+            <img src="kazim.jpg" alt="Bhojani Kazim" class="profile-pic">
+            <div class="header-text">
+                <h1>Bhojani Kazim</h1>
+                <p class="subtitle">Electronics & Communication Engineering Student</p>
+                <div class="contact-header">
+                    Bhavnagar, Gujarat | +91 7046946435<br>
+                    <a href="mailto:kazimbhojani91@gmail.com">kazimbhojani91@gmail.com</a> | 
+                    <a href="https://linkedin.com/in/kazim-bhojani-cte-gecbvn-ec-b4b830327" target="_blank">LinkedIn Profile</a>
+                </div>
+            </div>
+        </header>
+
+        
+
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-text">
+                <p>Hello! I'm Kazim Bhojani, a final year Electronics and Communication Engineering student at Government Engineering College, Bhavnagar. I am currently maintaining a CGPA of 7.65 and expecting to graduate in 2026.</p>
+                <p>I have a strong interest in embedded systems, IoT applications, and PCB design. Through my academic projects, I have gained hands-on experience working with Arduino, Raspberry Pi, and various sensors. I enjoy working on projects that combine hardware and software to create practical solutions.</p>
+                <p>I am looking for opportunities to apply my skills in a professional environment and continue learning new technologies in the field of electronics and embedded systems.</p>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Government Engineering College, Bhavnagar</h3>
+                <p class="course">Bachelor of Engineering - Electronics and Communication</p>
+                <p class="details">2022 - 2026 (Expected) | CGPA: 7.65 (Current)</p>
+            </div>
+        </section>
+
+       <section id="projects">
+    <h2>Projects</h2>
+    
+        <div class="project">
+            <h3>
+            Smart Glove for Speech-Impaired
+                <i class="fas fa-external-link-alt" style="font-size: 0.7em; margin-left: 8px;"></i>
+            </h3>
+            <p class="project-info">Solo Project</p>
+            <p>Designed and developed a wearable glove that translates hand gestures into text for speech-impaired users. The system uses flex sensors to detect finger movements and displays the corresponding text on an LCD screen in real-time.<a href="signlanguage handglove.pdf" target="_blank" class="project-link">Click Here</a></p>
+            <p class="technologies"><strong>Tools & Technologies:</strong> Arduino, C Programming, Flex Sensors, LCD Display, Tinkercad</p>
+        </div>
+    </a>
+
+        <div class="project">
+            <h3>
+                Automatic Drug Dispenser
+                <h5><a href="Automatic_Drug_DIsspensar_Report[1].pdf" target="_blank" class="project-link">Automatic Drug Dispenser Report</a></h5>
+                <i class="fas fa-external-link-alt" style="font-size: 0.7em; margin-left: 8px;"></i>
+            </h3>
+            <p class="project-info">Group Project</p>
+            <p>Developed a smart medication dispensing system that automatically dispenses medicines at scheduled times. The system includes QR code verification for patient identification and sends alerts for medication adherence.<a href="Automatic drug dispenser .pdf " target="_blank" class="project-link">Click Here</a> </p>
+            <p class="technologies"><strong>Tools & Technologies:</strong> Raspberry Pi, MicroPython, Motor Driver, DC Motor, Webcam, Display Module</p>
+        </div>
+    </a>
+
+</section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-group">
+                    <h3>Programming Languages</h3>
+                    <ul>
+                        <li>C (Basics)</li>
+                        <li>Python (Basics)</li>
+                        <li>HTML</li>
+                    </ul>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Embedded Systems</h3>
+                    <ul>
+                        <li>Arduino Uno</li>
+                        <li>Raspberry Pi</li>
+                        <li>Sensor Integration</li>
+                        <li>IoT Applications</li>
+                    </ul>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Design & Tools</h3>
+                    <ul>
+                        <li>PCB Design (Intermediate)</li>
+                        <li>Easy EDA</li>
+                        <li>Arduino IDE</li>
+                        <li>Altium Designer (Familiar)</li>
+                        <li>EDA Playground</li>
+                    </ul>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>Gujarati (Native)</li>
+                        <li>Hindi (Fluent)</li>
+                        <li>English (Intermediate)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="interests">
+    <h2>Technical Interests</h2>
+    <div class="interests-list">
+        
+        <div class="interest-item">
+            <h3>PCB Design & Prototyping</h3>
+            <p>Creating circuit board designs and building prototypes</p>
+        </div>
+
+        <div class="interest-item">
+            <h3>Embedded Systems & IoT</h3>
+            <p>Developing smart connected devices</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="hobbies">
+    <h2>Hobbies</h2>
+    <div class="interests-list">
+        
+        <div class="interest-item">
+            <h3>Sketching</h3>
+            <p>Improves creativity and attention to detail</p>
+        </div>
+
+        <div class="interest-item">
+            <h3>Football</h3>
+            <p>Builds teamwork and discipline</p>
+        </div>
+
+    </div>
+</section>
+
+      <section id="resume">
+    <h2>Resume</h2>
+    <div class="resume-section">
+        <h3>Download My Resume</h3>
+        <p>View my complete resume with detailed information about my education, projects, and skills.</p>
+        
+        <a href="kazimCV.pdf" class="download-btn" target="_blank">View & Download Resume (PDF)</a>
+    </div>
+</section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <div class="contact-info">
+                <p>I am open to internship opportunities and collaborations in embedded systems and electronics.</p>
+                <p><strong>Email:</strong> <a href="mailto:kazimbhojani91@gmail.com">kazimbhojani91@gmail.com</a></p>
+                <p><strong>Phone:</strong> +91 7046946435</p>
+                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/kazim-bhojani-cte-gecbvn-ec-b4b830327" target="_blank">Bhojani Kazim</a></p>
+                <P><strong>GitHub:</strong><a href="https://github.com/KazimGL" target="_blank"><i class="fab fa-github"></i> KazimGL</a></P>
+                <p><strong>Location:</strong> Bhavnagar, Gujarat, India</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
