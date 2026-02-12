@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bhojani Kazim - Portfolio</title>
+    <title>kazim bhojani</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -11,465 +14,887 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --cream: #fff5f7;
+            --soft-pink: #ffcad4;
+            --blush: #ffb3c6;
+            --lavender: #c9b8f5;
+            --mint: #b8e0d2;
+            --peach: #ffd4a3;
+            --text: #4a4a4a;
+            --text-light: #7a7a7a;
+            --white: #ffffff;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
+            font-family: 'Quicksand', 'Noto Sans KR', sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            background: white;
-            padding: 30px;
-            margin-bottom: 20px;
-            border-bottom: 3px solid #2c3e50;
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .profile-pic {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 3px solid #2c3e50;
-            object-fit: cover;
-            flex-shrink: 0;
-        }
-
-        .header-text {
-            flex: 1;
-        }
-
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
-
-        .subtitle {
-            color: #555;
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-
-        .contact-header {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.8;
-        }
-
-        .contact-header a {
-            color: #3498db;
-            text-decoration: none;
-        }
-
+        /* Simple nav */
         nav {
-            background: #2c3e50;
-            padding: 10px;
-            margin-bottom: 20px;
+            padding: 1.5rem 5%;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 202, 212, 0.3);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         nav a {
-            color: white;
+            color: var(--text);
             text-decoration: none;
-            padding: 8px 15px;
-            display: inline-block;
-            margin-right: 5px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            position: relative;
+            transition: color 0.3s;
         }
 
         nav a:hover {
-            background: #34495e;
+            color: var(--blush);
         }
 
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--soft-pink);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero - feels more personal */
+        .intro {
+            padding: 5rem 5% 3rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .photo-wrap {
+            position: relative;
+        }
+
+        .photo-wrap img {
+            width: 100%;
+            max-width: 320px;
+            border-radius: 20px;
+            box-shadow: 
+                15px 15px 0 var(--soft-pink),
+                15px 15px 0 1px rgba(255, 179, 198, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-wrap img:hover {
+            transform: translate(-5px, -5px);
+        }
+
+        .intro-text h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.8rem;
+            line-height: 1.2;
+        }
+
+        .intro-text .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .intro-text p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: inline-block;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: var(--blush);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 179, 198, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--soft-pink);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 179, 198, 0.4);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--blush);
+            color: var(--blush);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--blush);
+            color: white;
+        }
+
+        /* Sections */
         section {
-            background: white;
-            padding: 25px;
-            margin-bottom: 20px;
+            padding: 3rem 5%;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
         h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 8px;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            color: var(--text);
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
         }
 
-        .about-text {
-            color: #555;
-            text-align: justify;
+        h2::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -15px;
+            width: 40px;
+            height: 40px;
+            background: var(--soft-pink);
+            opacity: 0.3;
+            border-radius: 10px;
+            z-index: -1;
         }
 
-        .about-text p {
-            margin-bottom: 12px;
+        /* About - more casual */
+        .about-content {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            border-left: 5px solid var(--lavender);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         }
 
-        .education-item {
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #ddd;
+        .about-content p {
+            color: var(--text-light);
+            margin-bottom: 1.3rem;
+            font-size: 1.05rem;
         }
 
-        .education-item:last-child {
-            border-bottom: none;
-        }
-
-        .education-item h3 {
-            color: #2c3e50;
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-
-        .education-item .course {
-            color: #555;
-            font-weight: bold;
-            margin-bottom: 3px;
-        }
-
-        .education-item .details {
-            color: #777;
-            font-size: 14px;
-        }
-
-        .project {
-            margin-bottom: 25px;
-            padding: 15px;
-            background: #f9f9f9;
-            border-left: 4px solid #3498db;
-        }
-
-        .project h3 {
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
-
-        .project-info {
-            color: #777;
-            font-size: 13px;
-            margin-bottom: 10px;
-        }
-
-        .project p {
-            color: #555;
-            margin-bottom: 10px;
-        }
-
-        .technologies {
-            font-size: 14px;
-            color: #666;
-        }
-
-        .technologies strong {
-            color: #2c3e50;
-        }
-
-        .skills-container {
+        .quick-facts {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
-        .skill-group {
-            background: #f9f9f9;
-            padding: 15px;
-            border: 1px solid #ddd;
+        .fact-box {
+            background: linear-gradient(135deg, var(--mint), var(--lavender));
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
         }
 
-        .skill-group h3 {
-            color: #2c3e50;
-            font-size: 16px;
-            margin-bottom: 10px;
+        .fact-box .number {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.3rem;
         }
 
-        .skill-group ul {
+        .fact-box .label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Education */
+        .edu-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--peach);
+        }
+
+        .edu-card h3 {
+            color: var(--text);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-card .degree {
+            color: var(--blush);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-card .details {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Projects - more organic */
+        .projects-wrap {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card:nth-child(odd) {
+            border-left: 5px solid var(--soft-pink);
+        }
+
+        .project-card:nth-child(even) {
+            border-left: 5px solid var(--lavender);
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-content h3 {
+            color: var(--text);
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .project-meta {
+            color: var(--blush);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .project-content p {
+            color: var(--text-light);
+            margin-bottom: 1.2rem;
+            line-height: 1.7;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            background: var(--cream);
+            color: var(--text);
+            padding: 0.4rem 1rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            border: 1px solid var(--soft-pink);
+        }
+
+        .project-link {
+            color: var(--blush);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-link:hover {
+            gap: 0.8rem;
+        }
+
+        /* Skills - cleaner look */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-box {
+            background: white;
+            padding: 2rem 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-box:nth-child(1) { border-top: 3px solid var(--soft-pink); }
+        .skill-box:nth-child(2) { border-top: 3px solid var(--lavender); }
+        .skill-box:nth-child(3) { border-top: 3px solid var(--mint); }
+        .skill-box:nth-child(4) { border-top: 3px solid var(--peach); }
+
+        .skill-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            color: var(--text);
+        }
+
+        .skill-box ul {
             list-style: none;
-            padding-left: 0;
         }
 
-        .skill-group li {
-            color: #555;
-            padding: 4px 0;
-            font-size: 14px;
+        .skill-box li {
+            color: var(--text-light);
+            padding: 0.5rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+            font-size: 0.95rem;
         }
 
-        .skill-group li:before {
-            content: "• ";
-            color: #3498db;
+        .skill-box li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--blush);
         }
 
-        .interests-list {
+        /* Interests - fun layout */
+        .interests-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
         }
 
         .interest-item {
-            background: #f9f9f9;
-            padding: 15px;
-            border: 1px solid #ddd;
+            background: white;
+            padding: 2rem 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .interest-item:hover {
+            transform: scale(1.05);
+        }
+
+        .interest-item:nth-child(1) { background: linear-gradient(135deg, #fff 0%, #fff5f7 100%); }
+        .interest-item:nth-child(2) { background: linear-gradient(135deg, #fff 0%, #f8f5ff 100%); }
+        .interest-item:nth-child(3) { background: linear-gradient(135deg, #fff 0%, #f5fff8 100%); }
+        .interest-item:nth-child(4) { background: linear-gradient(135deg, #fff 0%, #fffbf5 100%); }
+
+        .interest-emoji {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
         }
 
         .interest-item h3 {
-            color: #2c3e50;
-            font-size: 16px;
-            margin-bottom: 5px;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
         }
 
         .interest-item p {
-            color: #777;
-            font-size: 14px;
+            color: var(--text-light);
+            font-size: 0.9rem;
         }
 
-        .contact-info {
-            background: #f9f9f9;
-            padding: 20px;
-            border: 1px solid #ddd;
-        }
-
-        .contact-info p {
-            margin-bottom: 10px;
-            color: #555;
-        }
-
-        .contact-info a {
-            color: #3498db;
-            text-decoration: none;
-        }
-
-        .resume-section {
+        /* Resume download */
+        .resume-box {
+            background: linear-gradient(135deg, var(--soft-pink), var(--lavender));
+            padding: 3rem 2rem;
+            border-radius: 20px;
             text-align: center;
-            padding: 30px;
-            background: #f9f9f9;
-            border: 2px dashed #3498db;
-        }
-
-        .resume-section h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-        }
-
-        .resume-section p {
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .download-btn {
-            display: inline-block;
-            background: #3498db;
             color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
+            box-shadow: 0 8px 25px rgba(255, 179, 198, 0.3);
+        }
+
+        .resume-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .resume-box p {
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .resume-box .btn {
+            background: white;
+            color: var(--blush);
+            font-weight: 600;
+        }
+
+        .resume-box .btn:hover {
+            background: var(--cream);
+            transform: translateY(-3px);
+        }
+
+        /* Contact - personal touch */
+        .contact-wrap {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-intro {
+            margin-bottom: 2.5rem;
+            color: var(--text-light);
+            font-size: 1.05rem;
+        }
+
+        .contact-items {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1rem;
+            border-radius: 10px;
             transition: background 0.3s;
         }
 
-        .download-btn:hover {
-            background: #2980b9;
+        .contact-row:hover {
+            background: var(--cream);
         }
 
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--soft-pink), var(--lavender));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .contact-info h4 {
+            color: var(--text);
+            font-size: 0.9rem;
+            margin-bottom: 0.2rem;
+            font-weight: 500;
+        }
+
+        .contact-info a,
+        .contact-info p {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .contact-info a:hover {
+            color: var(--blush);
+        }
+
+        .socials {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border: 2px solid var(--soft-pink);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blush);
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: all 0.3s;
+        }
+
+        .social-btn:hover {
+            background: var(--blush);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
         footer {
             text-align: center;
-            padding: 20px;
-            color: #777;
-            font-size: 14px;
-            background: white;
-            margin-top: 20px;
+            padding: 2.5rem 5%;
+            color: var(--text-light);
+            font-size: 0.95rem;
         }
 
+        footer span {
+            color: #ff6b9d;
+        }
+
+        /* Mobile responsive */
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
+            nav ul {
+                gap: 1.2rem;
+            }
+
+            .intro-grid {
+                grid-template-columns: 1fr;
                 text-align: center;
             }
 
-            .profile-pic {
-                margin-bottom: 15px;
+            .photo-wrap {
+                display: flex;
+                justify-content: center;
             }
 
-            .skills-container {
-                grid-template-columns: 1fr;
+            .photo-wrap img {
+                max-width: 250px;
             }
 
-            .interests-list {
-                grid-template-columns: 1fr;
+            .btn-group {
+                justify-content: center;
             }
 
-            nav a {
-                display: block;
-                margin-bottom: 5px;
+            .intro-text h1 {
+                font-size: 2.2rem;
             }
+
+            h2 {
+                font-size: 1.7rem;
+            }
+
+            section {
+                padding: 2rem 5%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                gap: 0.8rem;
+                text-align: center;
+            }
+
+            .intro {
+                padding: 3rem 5%;
+            }
+
+            .intro-text h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Subtle animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--soft-pink);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--blush);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <!-- Replace 'your-photo.jpg' with your actual photo file name -->
-            <img src="kazim.jpg" alt="Bhojani Kazim" class="profile-pic">
-            <div class="header-text">
-                <h1>Bhojani Kazim</h1>
-                <p class="subtitle">Electronics & Communication Engineering Student</p>
-                <div class="contact-header">
-                    Bhavnagar, Gujarat | +91 7046946435<br>
-                    <a href="mailto:kazimbhojani91@gmail.com">kazimbhojani91@gmail.com</a> | 
-                    <a href="https://linkedin.com/in/kazim-bhojani-cte-gecbvn-ec-b4b830327" target="_blank">LinkedIn Profile</a>
+
+    <nav>
+        <ul>
+            <li><a href="#home">home</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#education">education</a></li>
+            <li><a href="#projects">projects</a></li>
+            <li><a href="#skills">skills</a></li>
+            <li><a href="#interests">interests</a></li>
+            <li><a href="#contact">contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="intro" id="home">
+        <div class="intro-grid">
+            <div class="photo-wrap">
+                <img src="kazim.jpg" alt="kazim">
+            </div>
+            <div class="intro-text">
+                <h1>hi, i'm kazim 👋</h1>
+                <p class="subtitle">electronics & communication student</p>
+                <p>i'm a final year engineering student who loves building things with arduino, raspberry pi, and designing PCBs. currently exploring embedded systems and iot while maintaining a decent gpa of 7.65 at government engineering college, bhavnagar.</p>
+                <div class="btn-group">
+                    <a href="#projects" class="btn btn-primary">see my work</a>
+                    <a href="#contact" class="btn btn-outline">let's talk</a>
                 </div>
             </div>
-        </header>
-
-        
-
-        <section id="about">
-            <h2>About Me</h2>
-            <div class="about-text">
-                <p>Hello! I'm Kazim Bhojani, a final year Electronics and Communication Engineering student at Government Engineering College, Bhavnagar. I am currently maintaining a CGPA of 7.65 and expecting to graduate in 2026.</p>
-                <p>I have a strong interest in embedded systems, IoT applications, and PCB design. Through my academic projects, I have gained hands-on experience working with Arduino, Raspberry Pi, and various sensors. I enjoy working on projects that combine hardware and software to create practical solutions.</p>
-                <p>I am looking for opportunities to apply my skills in a professional environment and continue learning new technologies in the field of electronics and embedded systems.</p>
-            </div>
-        </section>
-
-        <section id="education">
-            <h2>Education</h2>
-            <div class="education-item">
-                <h3>Government Engineering College, Bhavnagar</h3>
-                <p class="course">Bachelor of Engineering - Electronics and Communication</p>
-                <p class="details">2022 - 2026 (Expected) | CGPA: 7.65 (Current)</p>
-            </div>
-        </section>
-
-       <section id="projects">
-    <h2>Projects</h2>
-    
-        <div class="project">
-            <h3>
-            Smart Glove for Speech-Impaired
-                <i class="fas fa-external-link-alt" style="font-size: 0.7em; margin-left: 8px;"></i>
-            </h3>
-            <p class="project-info">Solo Project</p>
-            <p>Designed and developed a wearable glove that translates hand gestures into text for speech-impaired users. The system uses flex sensors to detect finger movements and displays the corresponding text on an LCD screen in real-time.<a href="signlanguage handglove.pdf" target="_blank" class="project-link">Click Here</a></p>
-            <p class="technologies"><strong>Tools & Technologies:</strong> Arduino, C Programming, Flex Sensors, LCD Display, Tinkercad</p>
         </div>
-    </a>
+    </section>
 
-        <div class="project">
-            <h3>
-                Automatic Drug Dispenser
-                <h5><a href="Automatic_Drug_DIsspensar_Report[1].pdf" target="_blank" class="project-link">Automatic Drug Dispenser Report</a></h5>
-                <i class="fas fa-external-link-alt" style="font-size: 0.7em; margin-left: 8px;"></i>
-            </h3>
-            <p class="project-info">Group Project</p>
-            <p>Developed a smart medication dispensing system that automatically dispenses medicines at scheduled times. The system includes QR code verification for patient identification and sends alerts for medication adherence.<a href="Automatic drug dispenser .pdf " target="_blank" class="project-link">Click Here</a> </p>
-            <p class="technologies"><strong>Tools & Technologies:</strong> Raspberry Pi, MicroPython, Motor Driver, DC Motor, Webcam, Display Module</p>
-        </div>
-    </a>
-
-</section>
-
-        <section id="skills">
-            <h2>Technical Skills</h2>
-            <div class="skills-container">
-                <div class="skill-group">
-                    <h3>Programming Languages</h3>
-                    <ul>
-                        <li>C (Basics)</li>
-                        <li>Python (Basics)</li>
-                        <li>HTML</li>
-                    </ul>
+    <section id="about">
+        <h2>about me</h2>
+        <div class="about-content">
+            <p>hey there! so basically i'm just a regular engineering student who really enjoys making stuff work. started with simple arduino projects and now i'm into more complex stuff like iot devices and custom circuit boards.</p>
+            <p>what i really like about embedded systems is that you get to work with both hardware and software. it's pretty cool when you write some code and see an actual physical thing respond to it. been learning a lot through my projects, sometimes things work, sometimes they don't, but that's part of the fun.</p>
+            <p>right now i'm looking for internship opportunities where i can learn from people who actually do this professionally. would love to work on real projects and pick up new skills along the way.</p>
+            
+            <div class="quick-facts">
+                <div class="fact-box">
+                    <span class="number">7.65</span>
+                    <span class="label">current cgpa</span>
                 </div>
-
-                <div class="skill-group">
-                    <h3>Embedded Systems</h3>
-                    <ul>
-                        <li>Arduino Uno</li>
-                        <li>Raspberry Pi</li>
-                        <li>Sensor Integration</li>
-                        <li>IoT Applications</li>
-                    </ul>
+                <div class="fact-box">
+                    <span class="number">2026</span>
+                    <span class="label">graduating</span>
                 </div>
-
-                <div class="skill-group">
-                    <h3>Design & Tools</h3>
-                    <ul>
-                        <li>PCB Design (Intermediate)</li>
-                        <li>Easy EDA</li>
-                        <li>Arduino IDE</li>
-                        <li>Altium Designer (Familiar)</li>
-                        <li>EDA Playground</li>
-                    </ul>
-                </div>
-
-                <div class="skill-group">
-                    <h3>Languages</h3>
-                    <ul>
-                        <li>Gujarati (Native)</li>
-                        <li>Hindi (Fluent)</li>
-                        <li>English (Intermediate)</li>
-                    </ul>
+                <div class="fact-box">
+                    <span class="number">5+</span>
+                    <span class="label">projects done</span>
                 </div>
             </div>
-        </section>
-
-        <section id="interests">
-    <h2>Technical Interests</h2>
-    <div class="interests-list">
-        
-        <div class="interest-item">
-            <h3>PCB Design & Prototyping</h3>
-            <p>Creating circuit board designs and building prototypes</p>
         </div>
+    </section>
 
-        <div class="interest-item">
-            <h3>Embedded Systems & IoT</h3>
-            <p>Developing smart connected devices</p>
+    <section id="education">
+        <h2>education</h2>
+        <div class="edu-card">
+            <h3>Government Engineering College, Bhavnagar</h3>
+            <p class="degree">B.E. in Electronics and Communication</p>
+            <p class="details">2022 - 2026 (expected) • cgpa: 7.65</p>
         </div>
+    </section>
 
-    </div>
-</section>
-
-<section id="hobbies">
-    <h2>Hobbies</h2>
-    <div class="interests-list">
-        
-        <div class="interest-item">
-            <h3>Sketching</h3>
-            <p>Improves creativity and attention to detail</p>
-        </div>
-
-        <div class="interest-item">
-            <h3>Football</h3>
-            <p>Builds teamwork and discipline</p>
-        </div>
-
-    </div>
-</section>
-
-      <section id="resume">
-    <h2>Resume</h2>
-    <div class="resume-section">
-        <h3>Download My Resume</h3>
-        <p>View my complete resume with detailed information about my education, projects, and skills.</p>
-        
-        <a href="kazimCV.pdf" class="download-btn" target="_blank">View & Download Resume (PDF)</a>
-    </div>
-</section>
-
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <div class="contact-info">
-                <p>I am open to internship opportunities and collaborations in embedded systems and electronics.</p>
-                <p><strong>Email:</strong> <a href="mailto:kazimbhojani91@gmail.com">kazimbhojani91@gmail.com</a></p>
-                <p><strong>Phone:</strong> +91 7046946435</p>
-                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/kazim-bhojani-cte-gecbvn-ec-b4b830327" target="_blank">Bhojani Kazim</a></p>
-                <P><strong>GitHub:</strong><a href="https://github.com/KazimGL" target="_blank"><i class="fab fa-github"></i> KazimGL</a></P>
-                <p><strong>Location:</strong> Bhavnagar, Gujarat, India</p>
+    <section id="projects">
+        <h2>things i've built</h2>
+        <div class="projects-wrap">
+            
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>smart glove for speech-impaired</h3>
+                    <p class="project-meta">solo project</p>
+                    <p>made a glove that converts hand gestures into text using flex sensors. the idea was to help people who can't speak communicate better. used arduino and some flex sensors to detect finger movements, then displayed the text on an lcd screen. took a while to calibrate everything properly but it works pretty well now.</p>
+                    <div class="tags">
+                        <span class="tag">arduino</span>
+                        <span class="tag">c programming</span>
+                        <span class="tag">flex sensors</span>
+                        <span class="tag">lcd display</span>
+                        <span class="tag">tinkercad</span>
+                    </div>
+                    <a href="signlanguage handglove.pdf" class="project-link">view details →</a>
+                </div>
             </div>
-        </section>
-    </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>automatic drug dispenser</h3>
+                    <p class="project-meta">group project</p>
+                    <p>worked with my team to build an automated medicine dispenser. it uses a raspberry pi to dispense meds at scheduled times, has qr code scanning for patient verification, and sends alerts if someone misses their dose. the mechanical part with the motors was tricky but we figured it out.</p>
+                    <div class="tags">
+                        <span class="tag">raspberry pi</span>
+                        <span class="tag">micropython</span>
+                        <span class="tag">motor driver</span>
+                        <span class="tag">dc motor</span>
+                        <span class="tag">webcam</span>
+                    </div>
+                    <a href="Automatic drug dispenser .pdf" class="project-link">view details →</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>what i know</h2>
+        <div class="skills-grid">
+            
+            <div class="skill-box">
+                <h3>programming</h3>
+                <ul>
+                    <li>c (basics)</li>
+                    <li>python (basics)</li>
+                    <li>html</li>
+                </ul>
+            </div>
+
+            <div class="skill-box">
+                <h3>embedded stuff</h3>
+                <ul>
+                    <li>arduino uno</li>
+                    <li>raspberry pi</li>
+                    <li>sensor integration</li>
+                    <li>iot applications</li>
+                </ul>
+            </div>
+
+            <div class="skill-box">
+                <h3>design tools</h3>
+                <ul>
+                    <li>pcb design</li>
+                    <li>easy eda</li>
+                    <li>arduino ide</li>
+                    <li>altium designer</li>
+                    <li>eda playground</li>
+                </ul>
+            </div>
+
+            <div class="skill-box">
+                <h3>languages</h3>
+                <ul>
+                    <li>gujarati (native)</li>
+                    <li>hindi (fluent)</li>
+                    <li>english (intermediate)</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="interests">
+        <h2>what i enjoy</h2>
+        <div class="interests-grid">
+            
+            <div class="interest-item">
+                <span class="interest-emoji">🔧</span>
+                <h3>pcb design</h3>
+                <p>designing circuit boards and making prototypes</p>
+            </div>
+
+            <div class="interest-item">
+                <span class="interest-emoji">📡</span>
+                <h3>iot & embedded</h3>
+                <p>building smart connected devices</p>
+            </div>
+
+            <div class="interest-item">
+                <span class="interest-emoji">✏️</span>
+                <h3>sketching</h3>
+                <p>helps me think and relax</p>
+            </div>
+
+            <div class="interest-item">
+                <span class="interest-emoji">⚽</span>
+                <h3>football</h3>
+                <p>great for teamwork and staying active</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="resume">
+        <div class="resume-box">
+            <h3>want my resume?</h3>
+            <p>download it to see all the details about my education, projects and skills</p>
+            <a href="kazimCV.pdf" class="btn" download>download resume</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>let's connect</h2>
+        <div class="contact-wrap">
+            <p class="contact-intro">open to internships and collaborations! if you want to work on something together or just chat about embedded systems, feel free to reach out.</p>
+            
+            <div class="contact-items">
+                
+                <div class="contact-row">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-info">
+                        <h4>email</h4>
+                        <a href="mailto:kazimbhojani91@gmail.com">kazimbhojani91@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="contact-row">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-info">
+                        <h4>phone</h4>
+                        <p>+91 7046946435</p>
+                    </div>
+                </div>
+
+                <div class="contact-row">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-info">
+                        <h4>location</h4>
+                        <p>bhavnagar, gujarat, india</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="socials">
+                <a href="https://linkedin.com/in/kazim-bhojani-cte-gecbvn-ec-b4b830327" class="social-btn" target="_blank">in</a>
+                <a href="https://github.com/KazimGL" class="social-btn" target="_blank">gh</a>
+                <a href="mailto:kazimbhojani91@gmail.com" class="social-btn">@</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>made with <span>♥</span> by kazim • 2026</p>
+    </footer>
+
 </body>
 </html>
