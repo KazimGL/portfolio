@@ -1190,10 +1190,10 @@
         /* ── CV Download Button ── */
         document.getElementById('cvBtn').addEventListener('click', e => {
             e.preventDefault();
-            /* Replace 'Kazim_Bhojani_CV.pdf' with your actual CV filename */
+            /* Replace 'kazimCV.pdf' with your actual CV filename */
             const link = document.createElement('a');
-            link.href = 'Kazim_Bhojani_CV.pdf';
-            link.download = 'Kazim_Bhojani_CV.pdf';
+            link.href = 'kazimCV.pdf';
+            link.download = 'kazimCV.pdf';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
