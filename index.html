@@ -49,13 +49,6 @@ a{color:inherit}:focus-visible{outline:2px solid var(--g);outline-offset:3px}
 .mission .t .btn{margin-left:6.2rem}
 .arch{background:#1d3a35;border-radius:999px 999px 0 0;padding:clamp(3.5rem,11vw,8rem) 17% 0;margin-top:-2rem}.arch img{width:100%;height:auto;display:block;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.35)}
 
-.tr{fill:none;stroke:#8fd6a5;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
-.part{cursor:pointer;outline:none}
-.part rect{fill:#16302b;stroke:#3d6a60;stroke-width:1.5;transition:fill .2s,stroke .2s}
-.part text{font:600 12px Inter,sans-serif;fill:#fff;text-anchor:middle;pointer-events:none}
-.part text.s{font-weight:400;font-size:10.5px;fill:#b7d3cb}
-.part:hover rect,.part:focus rect,.part.on rect{fill:#2a5a4d;stroke:var(--g)}
-.pad{fill:var(--g)}.hole{fill:#1d3a35;stroke:#3d6a60;stroke-width:1.5}
 .info{color:#dcebe5;font-size:.92rem;padding:1.2rem .2rem 2rem}.info b{color:#fff;font-weight:600}
 .mq{background:var(--bg);padding:3rem 0 5rem;overflow:hidden}
 .row{display:flex;width:max-content;font:300 clamp(2.4rem,6vw,5rem)/1.5 Newsreader,serif;white-space:nowrap;animation:mq 38s linear infinite}
@@ -131,7 +124,8 @@ section.wrap,footer.wrap{padding-left:clamp(1.2rem,3.4vw,2.6rem);padding-right:c
 <div class="cr"><svg class="arc" viewBox="0 0 130 130" aria-hidden="true"><path d="M2 0C2 80 50 125 128 125"/></svg><a class="btn o" href="mailto:kazimbhojani91@gmail.com?subject=Hiring%20enquiry%20for%20Kazim">Email me</a></div>
 </div>
 <div>
-<div class="arch"><img src="images/esp32-board-portrait.jpg" width="760" height="986" alt="KiCad 3D render of my two-layer ESP32 board: ESP32-WROOM-32E module, USB-C input, charging and protection ICs, CH340C, switches and pin headers"><p class="info">The two-layer board as rendered in KiCad: ESP32-WROOM-32E, USB-C power, Li-ion charging and protection, 3.3V regulation, a CH340C USB-UART bridge, buttons and pin headers.</p></div>
+<!-- Upload your KiCad 3D render as esp32-board.png to the repo root. Until then the image hides itself. -->
+<div class="arch"><img src="esp32-board.png" alt="KiCad 3D render of my two-layer ESP32 board: ESP32-WROOM-32E module, USB-C input, charging and protection ICs, CH340C, switches and pin headers" onerror="this.style.display='none'"><p class="info">The two-layer board as rendered in KiCad: ESP32-WROOM-32E, USB-C power, Li-ion charging and protection, 3.3V regulation, a CH340C USB-UART bridge, buttons and pin headers.</p></div>
 </div></div>
 </section>
 
@@ -145,28 +139,28 @@ section.wrap,footer.wrap{padding-left:clamp(1.2rem,3.4vw,2.6rem);padding-right:c
 <h2 class="sf">Things I have built</h2>
 <div class="grid">
 <article class="card big">
-<img class="v" src="images/drug-dispenser.jpg" width="1100" height="874" alt="Automatic Drug Dispenser kiosk with medicine shelves, touchscreen, QR scanner and dispensing tray">
+<img class="v" src="Automatic%20Drug%20Dispenser%20Kiosk.png" width="1100" height="874" alt="Automatic Drug Dispenser kiosk with medicine shelves, touchscreen, QR scanner and dispensing tray">
 <div><p class="lab">Main project, group, Feb 2024</p><h3>Automatic Drug Dispenser</h3>
 <p>A cabinet-style machine that hands out medicine only after it verifies a doctor-issued prescription by QR code.</p>
 <ul><li><b>Hardware:</b> four-shelf cabinet with DC motors, driven by a Raspberry Pi 4 running Python, with a QR scanner.</li><li><b>MediDispense web app:</b> custom React and Vite app with doctor login, patient login, QR generation and a machine finder map.</li><li><b>End to end:</b> doctor issues, patient scans, machine releases the medicine.</li></ul>
 <p class="tg">Raspberry Pi 4, Python, DC motors, QR scanner, React, Vite</p><p class="cap">Image: concept render of the machine and its main parts.</p></div>
 </article>
 <article class="card">
-<img class="v" src="images/smart-glove.jpg" width="900" height="726" alt="Smart gesture glove with five flex sensors, a 16x2 LCD showing the detected gesture, a microcontroller and a small battery">
+<img class="v" src="Gemini_Generated_Image_6ieplq6ieplq6iep.png" width="900" height="726" alt="Smart gesture glove with five flex sensors, a 16x2 LCD showing the detected gesture, a microcontroller and a small battery">
 <p class="lab">Featured project, solo, Jul to Aug 2025</p><h3>Smart Gesture Glove</h3>
 <p>A glove that turns hand gestures into text, to help speech-impaired people communicate.</p>
 <ul><li><b>Five flex sensors,</b> one per finger, read by an Arduino Uno in real time.</li><li><b>Gesture to text</b> on a 16x2 LCD, with a phrase mapped to each finger.</li><li><b>Simulated first</b> in Tinkercad before assembly.</li></ul>
 <p class="tg">Arduino Uno, flex sensors, Embedded C, 16x2 LCD, Tinkercad</p><p class="cap">Image: concept render of the glove and its parts.</p>
 </article>
 <article class="card">
-<img class="v" src="images/esp32-board-landscape.jpg" width="900" height="693" alt="KiCad 3D render of my two-layer ESP32 board shown sideways: USB-C on the left, ESP32-WROOM-32E module, charging ICs, CH340C, switches and pin headers">
+<img class="v" src="esp32-board.png" width="900" height="693" alt="KiCad 3D render of my two-layer ESP32 board: USB-C, ESP32-WROOM-32E module, charging ICs, CH340C, switches and pin headers" onerror="this.style.display='none'">
 <p class="lab">PCB design, independent, Sept to Oct 2026</p><h3>ESP32 battery-powered IoT board</h3>
 <p>A complete board, from blank schematic to fabrication-ready files, in KiCad.</p>
 <ul><li><b>60+ line BOM</b> chosen from datasheets on cost, current and thermal performance.</li><li><b>ERC and DRC cleared,</b> with copper-pour grounding on a two-layer layout.</li></ul>
 <p class="tg">KiCad, 2-layer PCB, USB-C, Li-ion, 3.3V LDO, Gerber</p><p class="cap">Image: KiCad 3D render of the finished board.</p>
 </article>
 <article class="card">
-<img class="v" style="object-position:50% 40%" src="images/ticketwave-kiosk.jpg" width="900" height="822" alt="TicketWave self-service kiosk touchscreen with Ticket Booking, Parking Fee, Event Pass and Donation options, and a printed receipt with a QR code">
+<img class="v" style="object-position:50% 40%" src="TicketWave%20Self-Service%20Kiosk%20Receipt.png" width="900" height="822" alt="TicketWave self-service kiosk touchscreen with Ticket Booking, Parking Fee, Event Pass and Donation options, and a printed receipt with a QR code">
 <p class="lab">Firmware, Bonrix, Feb to Mar 2026</p><h3>TicketWave, a ticketing kiosk with UPI</h3>
 <p>Firmware for a self-service payment kiosk running in production.</p>
 <ul><li><b>LVGL v8</b> touchscreen interface on a capacitive display.</li><li><b>Dynamic UPI QR codes</b> and Bluetooth receipt printing.</li><li><b>Fixed</b> hardware-firmware interface problems with peripherals.</li></ul>
@@ -208,7 +202,6 @@ section.wrap,footer.wrap{padding-left:clamp(1.2rem,3.4vw,2.6rem);padding-right:c
 </div></div>
 <div class="big-name" aria-hidden="true">Kazim Bhojani</div>
 </footer>
-
 
 </body>
 </html>
