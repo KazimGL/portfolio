@@ -73,6 +73,9 @@ a{color:inherit}:focus-visible{outline:2px solid var(--g);outline-offset:3px}
 .card.big{grid-column:1/-1;display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;align-items:center}
 .card.big .v{margin:0;aspect-ratio:4/3}
 .card img.v{height:auto;object-fit:cover;border-radius:6px}.cap{font-size:.82rem;color:var(--mu);margin-top:.8rem}
+.doc-links{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
+.doc-btn{display:inline-block;padding:.5rem 1rem;border-radius:6px;background:var(--dk);color:#fff;font-size:.75rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;text-decoration:none;transition:background .2s}
+.doc-btn:hover{background:var(--g);color:#fff}
 .also{margin-top:2.5rem;color:var(--mu)}.also b{color:var(--dk);font-weight:600}
 .exp{padding:4rem 0 2rem}
 .exp .job,.sk,.edu{border-top:1px solid var(--ln)}
@@ -149,28 +152,48 @@ section.wrap,footer.wrap{padding-left:clamp(1.2rem,3.4vw,2.6rem);padding-right:c
 <div><p class="lab">Main project, group, Feb 2024</p><h3>Automatic Drug Dispenser</h3>
 <p>A cabinet-style machine that hands out medicine only after it verifies a doctor-issued prescription by QR code.</p>
 <ul><li><b>Hardware:</b> four-shelf cabinet with DC motors, driven by a Raspberry Pi 4 running Python, with a QR scanner.</li><li><b>MediDispense web app:</b> custom React and Vite app with doctor login, patient login, QR generation and a machine finder map.</li><li><b>End to end:</b> doctor issues, patient scans, machine releases the medicine.</li></ul>
-<p class="tg">Raspberry Pi 4, Python, DC motors, QR scanner, React, Vite</p><p class="cap">Image: concept render of the machine and its main parts.</p></div>
+<p class="tg">Raspberry Pi 4, Python, DC motors, QR scanner, React, Vite</p>
+<div class="doc-links">
+  <a href="Automatic_Drug_Disspensar_Reports.pdf" class="doc-btn" download>📥 Download Project Report (PDF)</a>
+  <a href="Automatic drug dispenser images.pdf" class="doc-btn" download>📥 Download Dispenser Images (PDF)</a>
+</div>
+<p class="cap">Image: concept render of the machine and its main parts.</p></div>
 </article>
+
 <article class="card">
 <img class="v" src="Hand.jpg" width="900" height="726" alt="Smart gesture glove with five flex sensors, a 16x2 LCD showing the detected gesture, a microcontroller and a small battery">
 <p class="lab">Featured project, solo, Jul to Aug 2025</p><h3>Smart Gesture Glove</h3>
 <p>A glove that turns hand gestures into text, to help speech-impaired people communicate.</p>
 <ul><li><b>Five flex sensors,</b> one per finger, read by an Arduino Uno in real time.</li><li><b>Gesture to text</b> on a 16x2 LCD, with a phrase mapped to each finger.</li><li><b>Simulated first</b> in Tinkercad before assembly.</li></ul>
-<p class="tg">Arduino Uno, flex sensors, Embedded C, 16x2 LCD, Tinkercad</p><p class="cap">Image: concept render of the glove and its parts.</p>
+<p class="tg">Arduino Uno, flex sensors, Embedded C, 16x2 LCD, Tinkercad</p>
+<div class="doc-links">
+  <a href="signlanguage handglove.pdf" class="doc-btn" download>📥 Download Glove Documentation (PDF)</a>
+</div>
+<p class="cap">Image: concept render of the glove and its parts.</p>
 </article>
+
 <article class="card">
-<img class="v" src="IoT Board.jpg" width="900" height="693" alt="KiCad 3D render of my two-layer ESP32 board shown sideways: USB-C on the left, ESP32-WROOM-32E module, charging ICs, CH340C, switches and pin headers">
+<img class="v" style="object-position:50% 40%" src="IoT Board.jpg" width="900" height="693" alt="KiCad 3D render of my two-layer ESP32 board shown sideways: USB-C on the left, ESP32-WROOM-32E module, charging ICs, CH340C, switches and pin headers">
 <p class="lab">PCB design, independent, Sept to Oct 2026</p><h3>ESP32 battery-powered IoT board</h3>
 <p>A complete board, from blank schematic to fabrication-ready files, in KiCad.</p>
 <ul><li><b>60+ line BOM</b> chosen from datasheets on cost, current and thermal performance.</li><li><b>ERC and DRC cleared,</b> with copper-pour grounding on a two-layer layout.</li></ul>
-<p class="tg">KiCad, 2-layer PCB, USB-C, Li-ion, 3.3V LDO, Gerber</p><p class="cap">Image: KiCad 3D render of the finished board.</p>
+<p class="tg">KiCad, 2-layer PCB, USB-C, Li-ion, 3.3V LDO, Gerber</p>
+<div class="doc-links">
+  <a href="https://github.com/KazimGL/ESP32-PowerIoT-DevBoard" class="doc-btn" target="_blank" rel="noopener">🔗 View GitHub Repository</a>
+</div>
+<p class="cap">Image: KiCad 3D render of the finished board.</p>
 </article>
+
 <article class="card">
 <img class="v" style="object-position:50% 40%" src="TicketWave Self-Service Kiosk.jpg" width="900" height="822" alt="TicketWave self-service kiosk touchscreen with Ticket Booking, Parking Fee, Event Pass and Donation options, and a printed receipt with a QR code">
 <p class="lab">Firmware, Bonrix, Feb to Mar 2026</p><h3>TicketWave, a ticketing kiosk with UPI</h3>
 <p>Firmware for a self-service payment kiosk running in production.</p>
 <ul><li><b>LVGL v8</b> touchscreen interface on a capacitive display.</li><li><b>Dynamic UPI QR codes</b> and Bluetooth receipt printing.</li><li><b>Fixed</b> hardware-firmware interface problems with peripherals.</li></ul>
-<p class="tg">ESP32, ESP32-S3, LVGL, BLE, UPI</p><p class="cap">Image: illustrative render of the kiosk interface and printed receipt.</p>
+<p class="tg">ESP32, ESP32-S3, LVGL, BLE, UPI</p>
+<div class="doc-links">
+  <a href="TicketWave.pdf" class="doc-btn" download>📥 Download TicketWave Documentation (PDF)</a>
+</div>
+<p class="cap">Image: illustrative render of the kiosk interface and printed receipt.</p>
 </article>
 </div>
 <p class="also"><b>Also built:</b> a temperature and humidity monitor with a DHT11 sensor and live LCD readings on Arduino (Mar to Apr 2025).</p>
@@ -180,7 +203,7 @@ section.wrap,footer.wrap{padding-left:clamp(1.2rem,3.4vw,2.6rem);padding-right:c
 <p class="lab">Experience</p><h2 class="sf">Where I have worked</h2>
 <article class="job">
 <div><h3>Embedded Systems Intern</h3><p class="when">Bonrix Embedded Innovations, Ahmedabad<br>Jan to Mar 2026</p></div>
-<ul><li><b>Cut device downtime by 20%</b> by redesigning firmware for ESP32-based IoT kiosks.</li><li><b>Connected devices to the cloud</b> with MQTT, BLE and Wi-Fi for secure, low-latency communication.</li><li><b>Built RTOS components</b> that made devices respond faster and process data more smoothly.</li><li><b>Debugged hardware and firmware together</b> with the team to make production devices more reliable.</li></ul>
+<ul><li><b>Cut device downtime by 20%</b> by redesigning firmware for ESP32-based IoT kiosks.</li><li><b>Connected devices to the cloud</b> with MQTT, BLE and Wi-Fi for secure, low-latency communication.</li><li><b>Built RTOS components</b> that made devices responded faster and process data more smoothly.</li><li><b>Debugged hardware and firmware together</b> with the team to make production devices more reliable.</li></ul>
 </article></section>
 
 <section class="skills wrap" id="skills">
@@ -208,7 +231,6 @@ section.wrap,footer.wrap{padding-left:clamp(1.2rem,3.4vw,2.6rem);padding-right:c
 </div></div>
 <div class="big-name" aria-hidden="true">Kazim Bhojani</div>
 </footer>
-
 
 </body>
 </html>
