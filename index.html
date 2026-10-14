@@ -47,8 +47,8 @@ a{color:inherit}:focus-visible{outline:2px solid var(--g);outline-offset:3px}
 .mission .t .cr{position:relative;display:flex;align-items:center}
 .mission .t .cr .arc{position:absolute;left:1rem;top:50%;transform:translateY(-100%);width:5.2rem;height:5.2rem}
 .mission .t .btn{margin-left:6.2rem}
-.arch{background:#1d3a35;border-radius:999px 999px 0 0;padding:clamp(1.6rem,4vw,3.4rem) clamp(1rem,3vw,2.4rem) 0;margin-top:-2rem;min-height:520px}
-.arch svg{width:100%;height:auto;display:block}
+.arch{background:#1d3a35;border-radius:999px 999px 0 0;padding:clamp(3.5rem,11vw,8rem) 17% 0;margin-top:-2rem}.arch img{width:100%;height:auto;display:block;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.35)}
+
 .tr{fill:none;stroke:#8fd6a5;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
 .part{cursor:pointer;outline:none}
 .part rect{fill:#16302b;stroke:#3d6a60;stroke-width:1.5;transition:fill .2s,stroke .2s}
@@ -56,7 +56,7 @@ a{color:inherit}:focus-visible{outline:2px solid var(--g);outline-offset:3px}
 .part text.s{font-weight:400;font-size:10.5px;fill:#b7d3cb}
 .part:hover rect,.part:focus rect,.part.on rect{fill:#2a5a4d;stroke:var(--g)}
 .pad{fill:var(--g)}.hole{fill:#1d3a35;stroke:#3d6a60;stroke-width:1.5}
-.info{color:#dcebe5;font-size:.95rem;min-height:4.6rem;padding:1rem .3rem 1.4rem}.info b{color:#fff;font-weight:600}
+.info{color:#dcebe5;font-size:.92rem;padding:1.2rem .2rem 2rem}.info b{color:#fff;font-weight:600}
 .mq{background:var(--bg);padding:3rem 0 5rem;overflow:hidden}
 .row{display:flex;width:max-content;font:300 clamp(2.4rem,6vw,5rem)/1.5 Newsreader,serif;white-space:nowrap;animation:mq 38s linear infinite}
 .row.r{animation-direction:reverse;animation-duration:46s}
@@ -65,13 +65,14 @@ a{color:inherit}:focus-visible{outline:2px solid var(--g);outline-offset:3px}
 .work{padding:6rem 0 3rem}
 .work h2{font-size:clamp(2.4rem,5.4vw,4.4rem);margin:1rem 0 3.5rem}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem 2rem}
-.card .v{aspect-ratio:3/2;display:block;width:100%;margin-bottom:1.4rem}
+.card .v{aspect-ratio:4/3;display:block;width:100%;margin-bottom:1.4rem}
 .card h3{font:300 clamp(1.8rem,3vw,2.5rem)/1.1 Newsreader,serif;margin:.5rem 0 .8rem}
 .card p,.card li{color:var(--mu)}
 .card ul{margin:.9rem 0 0 1.1rem}.card li{margin-bottom:.4rem}.card li b{color:var(--dk);font-weight:600}
 .card .tg{margin-top:1rem;font-size:.82rem;color:var(--dk);border-top:1px solid var(--ln);padding-top:.8rem}
 .card.big{grid-column:1/-1;display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;align-items:center}
 .card.big .v{margin:0;aspect-ratio:4/3}
+.card img.v{height:auto;object-fit:cover;border-radius:6px}.cap{font-size:.82rem;color:var(--mu);margin-top:.8rem}
 .also{margin-top:2.5rem;color:var(--mu)}.also b{color:var(--dk);font-weight:600}
 .exp{padding:4rem 0 2rem}
 .exp .job,.sk,.edu{border-top:1px solid var(--ln)}
@@ -94,6 +95,8 @@ footer{padding:3rem 0 0}
 .fc a{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:.9rem;width:max-content}
 .fc a:hover{color:var(--g)}
 .big-name{font-family:Fraunces,Georgia,serif;font-weight:900;font-variation-settings:"SOFT" 100;font-size:clamp(2.4rem,9.4vw,10.5rem);letter-spacing:-.03em;line-height:1.05;white-space:nowrap;text-align:center;overflow:hidden;padding:1rem 0 0}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap}
+section.wrap,footer.wrap{padding-left:clamp(1.2rem,3.4vw,2.6rem);padding-right:clamp(1.2rem,3.4vw,2.6rem)}
 @media(max-width:860px){.bar nav a:not(.btn){display:none}.intro .in{margin-left:0}.arc{display:none}.dark .cols,.mission .g,.grid,.card.big,.job,.fg,.edu{grid-template-columns:1fr}.mission .t .btn{margin-left:0}.mission h2{margin-bottom:2rem}.arch{margin-top:0;min-height:0}.mission .t{padding-bottom:2rem}.dark svg.ln{display:none}.fc{grid-template-columns:1fr 1fr}}
 @media(prefers-reduced-motion:reduce){.row{animation:none}html{scroll-behavior:auto}}
 </style>
@@ -124,24 +127,13 @@ footer{padding:3rem 0 0}
 <section class="mission" id="board"><div class="wrap g">
 <div class="t">
 <p class="lab">A board I designed</p>
-<h2 class="sf">My ESP32 board, part by part.</h2>
+<h2 class="sf">A real board, designed in KiCad.</h2>
 <div class="cr"><svg class="arc" viewBox="0 0 130 130" aria-hidden="true"><path d="M2 0C2 80 50 125 128 125"/></svg><a class="btn o" href="mailto:kazimbhojani91@gmail.com?subject=Hiring%20enquiry%20for%20Kazim">Email me</a></div>
 </div>
 <div>
-<div class="arch">
-<svg viewBox="0 0 720 440" role="group" aria-label="Interactive layout of my ESP32 IoT board. Select a part to read about it.">
-<circle class="hole" cx="34" cy="406" r="9"/><circle class="hole" cx="686" cy="406" r="9"/>
-<path class="tr" d="M110 225H130V100H150"/><path class="tr" d="M260 100H300V200H340"/><path class="tr" d="M260 355H300V260H340"/><path class="tr" d="M130 225V355H150"/><path class="tr" d="M520 225H580"/><path class="tr" d="M395 310V345"/><path class="tr" d="M450 380H600V300H630V270"/>
-<g class="pad"><circle cx="110" cy="225" r="4"/><circle cx="150" cy="100" r="4"/><circle cx="260" cy="100" r="4"/><circle cx="340" cy="200" r="4"/><circle cx="340" cy="260" r="4"/><circle cx="260" cy="355" r="4"/><circle cx="520" cy="225" r="4"/><circle cx="580" cy="225" r="4"/></g>
-<g class="part" tabindex="0" role="button" data-t="USB-C with ESD protection" data-d="Power comes in here, and so does the programming cable. ESD protection guards the board against static."><rect x="40" y="180" width="70" height="90" rx="10"/><text x="75" y="222">USB-C</text><text class="s" x="75" y="238">ESD guard</text></g>
-<g class="part" tabindex="0" role="button" data-t="Li-ion charging and protection" data-d="A TP4056 charges the cell, and a DW01A with an FS8205A protects it in two stages."><rect x="150" y="55" width="110" height="90" rx="10"/><text x="205" y="94">Charger</text><text class="s" x="205" y="111">TP4056</text><text class="s" x="205" y="125">DW01A + FS8205A</text></g>
-<g class="part" tabindex="0" role="button" data-t="3.3V LDO regulator" data-d="Steps battery and USB power down to a steady 3.3 V for the ESP32 and the sensor."><rect x="150" y="310" width="110" height="90" rx="10"/><text x="205" y="352">3.3V LDO</text><text class="s" x="205" y="369">Regulator</text></g>
-<g class="part" tabindex="0" role="button" data-t="ESP32-WROOM-32E" data-d="The main controller. An auto-program circuit lets you flash it without pressing boot and reset."><rect x="340" y="140" width="180" height="170" rx="12"/><text x="430" y="218">ESP32-WROOM-32E</text><text class="s" x="430" y="236">Wi-Fi, BLE, auto-program</text></g>
-<g class="part" tabindex="0" role="button" data-t="CH340C USB-UART bridge" data-d="Lets a computer flash the ESP32 and read its serial output over USB."><rect x="340" y="345" width="110" height="60" rx="10"/><text x="395" y="372">CH340C</text><text class="s" x="395" y="388">USB-UART</text></g>
-<g class="part" tabindex="0" role="button" data-t="BME280 sensor" data-d="Reads temperature, humidity and pressure over I2C."><rect x="580" y="180" width="110" height="90" rx="10"/><text x="635" y="222">BME280</text><text class="s" x="635" y="238">I2C sensor</text></g>
-</svg>
-<p class="info" id="info" aria-live="polite">Hover or tap any part to see what it does.</p>
-</div></div></div></section>
+<div class="arch"><img src="images/esp32-board-portrait.jpg" width="760" height="986" alt="KiCad 3D render of my two-layer ESP32 board: ESP32-WROOM-32E module, USB-C input, charging and protection ICs, CH340C, switches and pin headers"><p class="info">The two-layer board as rendered in KiCad: ESP32-WROOM-32E, USB-C power, Li-ion charging and protection, 3.3V regulation, a CH340C USB-UART bridge, buttons and pin headers.</p></div>
+</div></div>
+</section>
 
 <div class="mq" aria-hidden="true">
 <div class="row"><span>Embedded</span>·<span>Firmware</span>·<span>PCB design</span>·<span>KiCad</span>·<span>ESP32</span>·<span>Embedded</span>·<span>Firmware</span>·<span>PCB design</span>·<span>KiCad</span>·<span>ESP32</span>·</div>
@@ -153,32 +145,32 @@ footer{padding:3rem 0 0}
 <h2 class="sf">Things I have built</h2>
 <div class="grid">
 <article class="card big">
-<svg class="v" viewBox="0 0 400 300" role="img" aria-label="Illustration of a four-shelf cabinet"><rect width="400" height="300" fill="#b5694a"/><g fill="#7a3d25"><rect x="90" y="40" width="220" height="220" rx="8"/></g><g fill="#d79a78"><rect x="104" y="54" width="192" height="42" rx="4"/><rect x="104" y="104" width="192" height="42" rx="4"/><rect x="104" y="154" width="192" height="42" rx="4"/><rect x="104" y="204" width="192" height="42" rx="4"/></g><g fill="#7a3d25"><rect x="120" y="66" width="18" height="18"/><rect x="146" y="66" width="18" height="18"/><rect x="120" y="116" width="18" height="18"/><rect x="250" y="166" width="18" height="18"/><rect x="224" y="216" width="18" height="18"/></g></svg>
+<img class="v" src="images/drug-dispenser.jpg" width="1100" height="874" alt="Automatic Drug Dispenser kiosk with medicine shelves, touchscreen, QR scanner and dispensing tray">
 <div><p class="lab">Main project, group, Feb 2024</p><h3>Automatic Drug Dispenser</h3>
 <p>A cabinet-style machine that hands out medicine only after it verifies a doctor-issued prescription by QR code.</p>
 <ul><li><b>Hardware:</b> four-shelf cabinet with DC motors, driven by a Raspberry Pi 4 running Python, with a QR scanner.</li><li><b>MediDispense web app:</b> custom React and Vite app with doctor login, patient login, QR generation and a machine finder map.</li><li><b>End to end:</b> doctor issues, patient scans, machine releases the medicine.</li></ul>
-<p class="tg">Raspberry Pi 4, Python, DC motors, QR scanner, React, Vite</p></div>
+<p class="tg">Raspberry Pi 4, Python, DC motors, QR scanner, React, Vite</p><p class="cap">Image: concept render of the machine and its main parts.</p></div>
 </article>
 <article class="card">
-<svg class="v" viewBox="0 0 400 300" role="img" aria-label="Illustration of five flex sensors"><rect width="400" height="300" fill="#0f6f7f"/><g fill="#e9d7c0"><rect x="80" y="110" width="34" height="130" rx="17"/><rect x="128" y="70" width="34" height="170" rx="17"/><rect x="176" y="50" width="34" height="190" rx="17"/><rect x="224" y="70" width="34" height="170" rx="17"/><rect x="272" y="120" width="34" height="120" rx="17"/></g><rect x="70" y="220" width="250" height="40" rx="12" fill="#09404a"/></svg>
+<img class="v" src="images/smart-glove.jpg" width="900" height="726" alt="Smart gesture glove with five flex sensors, a 16x2 LCD showing the detected gesture, a microcontroller and a small battery">
 <p class="lab">Featured project, solo, Jul to Aug 2025</p><h3>Smart Gesture Glove</h3>
 <p>A glove that turns hand gestures into text, to help speech-impaired people communicate.</p>
 <ul><li><b>Five flex sensors,</b> one per finger, read by an Arduino Uno in real time.</li><li><b>Gesture to text</b> on a 16x2 LCD, with a phrase mapped to each finger.</li><li><b>Simulated first</b> in Tinkercad before assembly.</li></ul>
-<p class="tg">Arduino Uno, flex sensors, Embedded C, 16x2 LCD, Tinkercad</p>
+<p class="tg">Arduino Uno, flex sensors, Embedded C, 16x2 LCD, Tinkercad</p><p class="cap">Image: concept render of the glove and its parts.</p>
 </article>
 <article class="card">
-<svg class="v" viewBox="0 0 400 300" role="img" aria-label="Illustration of a circuit board"><rect width="400" height="300" fill="#1f231f"/><rect x="130" y="80" width="140" height="140" rx="10" fill="#2bb24c"/><g stroke="#2bb24c" stroke-width="4" stroke-linecap="round"><path d="M130 110H70M130 150H50M130 190H70M270 110H330M270 150H350M270 190H330M170 80V40M230 80V40M170 220V260M230 220V260"/></g><g fill="#1f231f"><circle cx="165" cy="115" r="9"/><circle cx="235" cy="185" r="9"/></g></svg>
+<img class="v" src="images/esp32-board-landscape.jpg" width="900" height="693" alt="KiCad 3D render of my two-layer ESP32 board shown sideways: USB-C on the left, ESP32-WROOM-32E module, charging ICs, CH340C, switches and pin headers">
 <p class="lab">PCB design, independent, Sept to Oct 2026</p><h3>ESP32 battery-powered IoT board</h3>
 <p>A complete board, from blank schematic to fabrication-ready files, in KiCad.</p>
 <ul><li><b>60+ line BOM</b> chosen from datasheets on cost, current and thermal performance.</li><li><b>ERC and DRC cleared,</b> with copper-pour grounding on a two-layer layout.</li></ul>
-<p class="tg">KiCad, 2-layer PCB, USB-C, Li-ion, 3.3V LDO, Gerber</p>
+<p class="tg">KiCad, 2-layer PCB, USB-C, Li-ion, 3.3V LDO, Gerber</p><p class="cap">Image: KiCad 3D render of the finished board.</p>
 </article>
 <article class="card">
-<svg class="v" viewBox="0 0 400 300" role="img" aria-label="Illustration of a payment QR code"><rect width="400" height="300" fill="#e0dfd8"/><rect x="120" y="50" width="160" height="200" rx="14" fill="#1f231f"/><rect x="136" y="66" width="128" height="80" rx="6" fill="#2bb24c"/><g fill="#fff"><rect x="150" y="162" width="30" height="30"/><rect x="190" y="162" width="14" height="14"/><rect x="214" y="176" width="30" height="30"/><rect x="150" y="206" width="14" height="14"/><rect x="190" y="200" width="14" height="30"/></g></svg>
+<img class="v" style="object-position:50% 40%" src="images/ticketwave-kiosk.jpg" width="900" height="822" alt="TicketWave self-service kiosk touchscreen with Ticket Booking, Parking Fee, Event Pass and Donation options, and a printed receipt with a QR code">
 <p class="lab">Firmware, Bonrix, Feb to Mar 2026</p><h3>TicketWave, a ticketing kiosk with UPI</h3>
 <p>Firmware for a self-service payment kiosk running in production.</p>
 <ul><li><b>LVGL v8</b> touchscreen interface on a capacitive display.</li><li><b>Dynamic UPI QR codes</b> and Bluetooth receipt printing.</li><li><b>Fixed</b> hardware-firmware interface problems with peripherals.</li></ul>
-<p class="tg">ESP32, ESP32-S3, LVGL, BLE, UPI</p>
+<p class="tg">ESP32, ESP32-S3, LVGL, BLE, UPI</p><p class="cap">Image: illustrative render of the kiosk interface and printed receipt.</p>
 </article>
 </div>
 <p class="also"><b>Also built:</b> a temperature and humidity monitor with a DHT11 sensor and live LCD readings on Arduino (Mar to Apr 2025).</p>
@@ -208,7 +200,7 @@ footer{padding:3rem 0 0}
 
 <footer class="wrap" id="contact">
 <div class="fg">
-<div><h2 class="sf">Have embedded or PCB work that needs doing?</h2><p>I'm looking for a role where I can design boards and ship firmware. Send me a message and I'll reply quickly.</p><a class="btn" href="mailto:kazimbhojani91@gmail.com?subject=Hiring%20enquiry%20for%20Kazim">Email me</a></div>
+<div><h2 class="sf">Have embedded or PCB work that needs doing?</h2><p>I'm looking for a role where I can design boards and ship firmware. Send me a message and I'll reply quickly.</p><div class="btns"><a class="btn" href="mailto:kazimbhojani91@gmail.com?subject=Hiring%20enquiry%20for%20Kazim">Email me</a><a class="btn o" href="https://wa.me/917046946435" target="_blank" rel="noopener">Contact me</a></div></div>
 <div class="fc">
 <div><h4>Explore</h4><a href="#work">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a></div>
 <div><h4>Contact</h4><a href="mailto:kazimbhojani91@gmail.com">Email</a><a href="https://wa.me/917046946435" target="_blank" rel="noopener">WhatsApp</a></div>
@@ -217,21 +209,6 @@ footer{padding:3rem 0 0}
 <div class="big-name" aria-hidden="true">Kazim Bhojani</div>
 </footer>
 
-<script>
-(function(){
-var info=document.getElementById('info'),parts=document.querySelectorAll('.part');
-function show(p){
-parts.forEach(function(x){x.classList.remove('on')});p.classList.add('on');
-info.textContent='';
-var b=document.createElement('b');b.textContent=p.getAttribute('data-t')+'.';
-info.appendChild(b);info.appendChild(document.createTextNode(' '+p.getAttribute('data-d')));
-}
-parts.forEach(function(p){
-p.addEventListener('mouseenter',function(){show(p)});
-p.addEventListener('focus',function(){show(p)});
-p.addEventListener('click',function(){show(p)});
-});
-})();
-</script>
+
 </body>
 </html>
